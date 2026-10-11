@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.2.1 (2026-10-11)
+
+### Changed
+
+- **Telephone Attribute** help text: numbers must be stored in international format with the country code (for
+  example +44 7700 900123). Arasta ignores a local number such as 07700 900123 when it matches a customer across
+  channels, because the country is not known. No code changes.
+
 ## 2.2.0 (2026-10-11)
 
 ### Added

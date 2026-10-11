@@ -48,7 +48,7 @@
                 </field>
                 <field id="phone_attribute" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Telephone Attribute</label>
-                    <comment>Matches a signed-in customer with the same person on other channels (for example WhatsApp). Select an attribute only if your website verifies the phone number (for example with an SMS code).</comment>
+                    <comment>Matches a signed-in customer with the same person on other channels (for example WhatsApp). Select an attribute only if your website verifies the phone number (for example with an SMS code). Numbers must be stored in international format with the country code (for example +44 7700 900123 or 0044 7700 900123); a local number such as 07700 900123 is ignored for matching, because the country is not known.</comment>
                     <source_model>Softaware\ArastaLiveChat\Model\Config\Source\CustomerPhoneAttribute</source_model>
                 </field>
             </group>
