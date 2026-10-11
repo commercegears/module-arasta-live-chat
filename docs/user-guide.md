@@ -72,6 +72,11 @@ when each one is a separate store in Arasta.
 - **Widget Loader URL**: the `src` of the embed code. Default `https://app.arasta.io/widget/v1/assets/loader.js`.
   Must start with `https://`. Order links are sent to the same host.
 - **Store ID**: the `data-store-id` of the embed code. The widget is only added when this is filled in.
+- **Cookie Consent Category**: with Softaware Cookie Consent installed, the chat loads only after the visitor accepts
+  this category (default `analytics`; use the category your cookie banner lists the chat under). Empty loads the chat
+  at once. Without Softaware Cookie Consent the chat always loads at once.
+- **Chat Stacking Order (z-index)**: empty keeps the chat above everything. Enter a number below the z-index of your
+  cookie banner or other dialogs if they must cover the chat button.
 
 **Customer Identity and Order Links**
 

@@ -8,6 +8,7 @@
             <widget>
                 <loader_url>https://app.arasta.io/widget/v1/assets/loader.js</loader_url>
                 <store_id/>
+                <consent_category>analytics</consent_category>
             </widget>
             <identity>
                 <signing_secret/>

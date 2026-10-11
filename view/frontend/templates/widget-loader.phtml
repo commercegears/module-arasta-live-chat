@@ -8,6 +8,8 @@
 $init = ['*' => ['Softaware_ArastaLiveChat/js/identity' => [
     'loaderUrl' => $block->getLoaderUrl(),
     'storeId' => $block->getArastaStoreId(),
+    'consentCategory' => $block->getConsentCategory(),
+    'zIndex' => $block->getZIndex(),
 ]]];
 ?>
 <script type="text/x-magento-init"><?= /* @noEscape */ json_encode($init, JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_UNESCAPED_SLASHES) ?></script>

@@ -13,6 +13,8 @@ $config = [
     'loaderUrl' => $block->getLoaderUrl(),
     'storeId' => $block->getArastaStoreId(),
     'section' => $block->getSectionName(),
+    'consentCategory' => $block->getConsentCategory(),
+    'zIndex' => $block->getZIndex(),
 ];
 ?>
 <script>
@@ -28,14 +30,25 @@ $config = [
         script.async = true;
         script.id = SCRIPT_ID;
         script.setAttribute('data-store-id', config.storeId);
+        if (config.zIndex) {
+            script.setAttribute('data-z-index', String(config.zIndex));
+        }
 
         let appended = false;
         let timer = null;
         let retried = false;
 
+        // With Softaware Cookie Consent (window.SwConsent) and a category set, the chat waits for that consent.
+        const consent = window.SwConsent;
+        const gated = Boolean(config.consentCategory && consent && typeof consent.whenGranted === 'function');
         const append = () => {
-            if (!appended) {
-                appended = true;
+            if (appended) {
+                return;
+            }
+            appended = true;
+            if (gated) {
+                consent.whenGranted(config.consentCategory, () => document.body.appendChild(script));
+            } else {
                 document.body.appendChild(script);
             }
         };

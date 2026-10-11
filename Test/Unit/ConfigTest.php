@@ -61,4 +61,21 @@ class ConfigTest extends TestCase
         self::assertFalse($config->isWidgetActive());
         self::assertSame(Config::DEFAULT_TTL, $config->tokenLifetime());
     }
+
+    /** the cookie consent category is a plain code; empty or anything else loads the chat at once */
+    public function testConsentCategory(): void
+    {
+        self::assertSame('analytics', $this->config(['softaware_arasta_live_chat/widget/consent_category' => ' Analytics '])->consentCategory());
+        self::assertSame('', $this->config(['softaware_arasta_live_chat/widget/consent_category' => ''])->consentCategory());
+        self::assertSame('', $this->config(['softaware_arasta_live_chat/widget/consent_category' => "x');alert(1)//"])->consentCategory());
+    }
+
+    /** the stacking order is an optional positive integer within the CSS range */
+    public function testZIndex(): void
+    {
+        self::assertNull($this->config([])->zIndex());
+        self::assertSame(9000, $this->config(['softaware_arasta_live_chat/widget/z_index' => '9000'])->zIndex());
+        self::assertNull($this->config(['softaware_arasta_live_chat/widget/z_index' => '99999999999'])->zIndex());
+        self::assertNull($this->config(['softaware_arasta_live_chat/widget/z_index' => '-5'])->zIndex());
+    }
 }

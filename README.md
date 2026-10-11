@@ -65,8 +65,11 @@ set per website and store view.
 | Enabled | `softaware_arasta_live_chat/general/enabled` | Yes |
 | Widget Loader URL | `softaware_arasta_live_chat/widget/loader_url` | `https://app.arasta.io/widget/v1/assets/loader.js` |
 | Store ID | `softaware_arasta_live_chat/widget/store_id` | empty |
+| Cookie Consent Category (Softaware Cookie Consent) | `softaware_arasta_live_chat/widget/consent_category` | `analytics` |
+| Chat Stacking Order (z-index) | `softaware_arasta_live_chat/widget/z_index` | empty (on top) |
 | Signing Secret (encrypted, at least 32 characters) | `softaware_arasta_live_chat/identity/signing_secret` | empty |
 | Identity Token Lifetime (seconds, 60 to 3600) | `softaware_arasta_live_chat/identity/ttl_seconds` | 3600 |
+| Telephone Attribute | `softaware_arasta_live_chat/identity/phone_attribute` | empty |
 
 Copy the Store ID (`data-store-id` of the embed code) and the signing secret from the Arasta dashboard (Stores > your
 store > Widget). The widget appears once the Store ID is set. Without a signing secret, customers chat as guests and

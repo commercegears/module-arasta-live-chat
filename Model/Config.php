@@ -31,6 +31,8 @@ class Config
     public const XML_TTL = 'identity/ttl_seconds';
     /** Customer attribute holding a verified phone number (empty = not used). */
     public const XML_PHONE_ATTRIBUTE = 'identity/phone_attribute';
+    public const XML_CONSENT_CATEGORY = 'widget/consent_category';
+    public const XML_Z_INDEX = 'widget/z_index';
 
     /** New field => the 1.x field under `platform_connector/`. */
     public const LEGACY_FIELDS = [
@@ -97,6 +99,23 @@ class Config
     {
         $code = trim($this->value(self::XML_PHONE_ATTRIBUTE, $storeId));
         return $code !== '' ? $code : null;
+    }
+
+    /**
+     * Softaware Cookie Consent category the chat waits for; '' loads it at once. Only a plain code is accepted
+     * (letters, digits, underscore), because it is passed to the consent API in the browser.
+     */
+    public function consentCategory(?int $storeId = null): string
+    {
+        $code = strtolower(trim($this->value(self::XML_CONSENT_CATEGORY, $storeId)));
+        return preg_match('/^[a-z][a-z0-9_]*$/', $code) === 1 ? $code : '';
+    }
+
+    /** Optional z-index for the chat button and panel; null keeps Arasta's default (on top of everything). */
+    public function zIndex(?int $storeId = null): ?int
+    {
+        $value = trim($this->value(self::XML_Z_INDEX, $storeId));
+        return preg_match('/^\d{1,10}$/', $value) === 1 && (int) $value > 1 && (int) $value <= 2147483647 ? (int) $value : null;
     }
 
     private function value(string $field, ?int $storeId): string

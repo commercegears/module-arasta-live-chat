@@ -5,6 +5,9 @@
  * customer (data-customer-token) and the guest's masked cart id (data-cart-id) come from the private
  * `platform-identity` customer-data section, so full-page-cached HTML never contains them. Every change is announced
  * with the `platform:identity` window event. An expired token is replaced with a fresh one.
+ *
+ * With Softaware Cookie Consent on the page (window.SwConsent) and a consent category set, the loader is added only
+ * once the visitor grants that category; without it the loader is added at once.
  */
 define(['Magento_Customer/js/customer-data'], function (customerData) {
     'use strict';
@@ -25,6 +28,9 @@ define(['Magento_Customer/js/customer-data'], function (customerData) {
         script.async = true;
         script.id = SCRIPT_ID;
         script.setAttribute('data-store-id', config.storeId);
+        if (config.zIndex) {
+            script.setAttribute('data-z-index', String(config.zIndex));
+        }
 
         function refresh() {
             customerData.reload([SECTION], false);
@@ -62,8 +68,16 @@ define(['Magento_Customer/js/customer-data'], function (customerData) {
             window.dispatchEvent(new CustomEvent('platform:identity', {detail: {token: token}}));
         }
 
+        function load() {
+            document.body.appendChild(script);
+        }
+
         apply(identity());
         identity.subscribe(apply);
-        document.body.appendChild(script);
+        if (config.consentCategory && window.SwConsent && typeof window.SwConsent.whenGranted === 'function') {
+            window.SwConsent.whenGranted(config.consentCategory, load);
+        } else {
+            load();
+        }
     };
 });

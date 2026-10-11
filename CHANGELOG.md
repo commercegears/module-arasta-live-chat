@@ -1,100 +1,34 @@
 # Changelog
 
+## 2.3.0 (2026-10-11)
+
+- With Softaware Cookie Consent installed, the chat loads only after the visitor accepts its cookie category.
+- New setting to keep your cookie banner and other dialogs above the chat button.
+- The Telephone Attribute list shows only fields that can hold a phone number.
+
 ## 2.2.1 (2026-10-11)
 
-### Changed
-
-- **Telephone Attribute** help text: numbers must be stored in international format with the country code (for
-  example +44 7700 900123). Arasta ignores a local number such as 07700 900123 when it matches a customer across
-  channels, because the country is not known. No code changes.
+- The Telephone Attribute help explains that phone numbers need the country code.
 
 ## 2.2.0 (2026-10-11)
 
-### Added
-
-- **Orders by phone** (`GET /V1/platform/orders/by-phone?phone=…&limit=5`, ACL `Softaware_ArastaLiveChat::api`):
-  the increment ids of the orders whose billing or shipping telephone is the same line as the given number, newest
-  first (at most 20). Arasta uses it to list the orders of a customer who wrote on WhatsApp, whose number WhatsApp has
-  verified. Numbers are compared on digits: a leading 0 or 00 and a country code are ignored, at least nine digits
-  must match. Magento's standard search cannot filter orders by address telephone, hence the endpoint. The version
-  endpoint reports the new capability `orders_by_phone`. No database changes.
+- Arasta can list a WhatsApp customer's orders from their verified phone number.
 
 ## 2.1.0 (2026-10-10)
 
-### Added
-
-- **Telephone Attribute** (Customer Identity and Order Links): choose the customer attribute that holds the customer's
-  phone number (Magento has no standard one). When set and the signed-in customer has a value, the identity token also
-  carries a `phone` claim, which Arasta uses to match the customer with the same person on other channels (for example
-  WhatsApp). Select an attribute only if your website verifies the phone number. Empty by default: tokens are unchanged.
+- New Telephone Attribute setting to recognise signed-in customers when they write on WhatsApp.
 
 ## 2.0.1 (2026-10-09)
 
-### Changed
-
-- Docs (listing, FAQ, user guide, README): dashes replaced with plain punctuation ("2.4.7 to 2.4.9", "PHP 8.2 to
-  8.5") and the link to the Arasta website removed. No code changes.
+- Documentation wording updates.
 
 ## 2.0.0 (2026-10-08)
 
-The connector is now a SoftAware module: package `softaware/module-arasta-live-chat`, module
-`Softaware_ArastaLiveChat`, namespace `Softaware\ArastaLiveChat`. The contract with Arasta is unchanged: REST URLs and
-response shapes, the capabilities reported by `/V1/platform/version`, the identity token (HS256, claims `sub`,
-`email`, `iat`, `exp`) and the `data-customer-token` / `data-cart-id` attributes, the order link body and its
-`X-Platform-Signature` header, and the `platform_conversation_id` columns.
+- Renamed to Arasta Live Chat by Softaware, with its own admin settings (upgrade steps in the README).
+- Hyvä themes and PHP 8.5 are supported.
+- Orders placed after a chat are linked to the conversation again on Magento 2.4.
+- Signed-in customers stay recognised in the chat without reloading the page.
 
-### Changed
+## 1.1.0 (2026-10-08)
 
-- Renamed from `platform/module-connector` / `Platform_Connector` (see "Upgrading from 1.x" in the README). The two
-  packages conflict in Composer.
-- Depends on `softaware/module-core` ^1.0. Composer: Mage-OS mirror repository, `version` field and PHPStan setup
-  removed; licence proprietary.
-- The loader tag now matches Arasta's embed code: `data-store-id` (was `data-store-key`), `async`, default loader URL
-  `https://app.arasta.io/widget/v1/assets/loader.js`.
-- Settings moved from `platform_connector/*` to `softaware_arasta_live_chat/*` (`widget/store_key` is now
-  `widget/store_id`). A data patch copies saved values; values only in env.php/config.php under the old paths are
-  still read as a fallback.
-- ACL resource `Platform_Connector::api` is now `Softaware_ArastaLiveChat::api` ("Arasta Live Chat API", under
-  Softaware > Arasta Live Chat). The data patch grants it to every role and integration that had the old one.
-- Layout block `platform.connector.widget` is now `softaware.arasta.widget`.
-
-### Added
-
-- PHP 8.5 support (PHP 8.2 to 8.5).
-- Admin settings: Stores > Configuration > Softaware > Arasta Live Chat (Enabled, Widget Loader URL, Store ID,
-  Signing Secret stored encrypted, Identity Token Lifetime), per website and store view, with their own ACL resource
-  `Softaware_ArastaLiveChat::config`. The secret must be at least 32 characters and the loader URL must be https.
-- Enabled switch: when off, no widget, no identity token, no quote tagging and no order links.
-- Hyvä support: vanilla JavaScript template using Hyvä private content (no RequireJS), picked through
-  `hyva_default.xml`; Hyvä CSP-safe (inline script registered with `HyvaCsp`).
-- Content Security Policy: `app.arasta.io` whitelisted (script, connect incl. `wss://`, img, style, font, frame); a
-  custom loader host from the admin is allowed on the storefront automatically.
-- Expired identity tokens cached in the browser are refreshed before they are handed to the widget, and a fresh
-  token is fetched shortly before the current one expires.
-- The identity section is reloaded when a guest gets a cart and after an order is placed, so `data-cart-id` is
-  current on Luma.
-- The signing secret is marked as sensitive (not written to `config.php` by `app:config:dump`).
-
-### Fixed
-
-- Orders were not linked to conversations on Magento 2.4.x: `QuoteManagement` drops custom columns when it builds the
-  order, so `platform_conversation_id` never reached the order and no order link was sent. The ID is now copied on
-  `sales_model_service_quote_submit_before`.
-- The token expiry reported to the browser now matches the token's `exp` when the lifetime is set below 60 seconds.
-- A signing secret shorter than 32 characters set outside the admin no longer breaks the customer-data request; no
-  token is issued and a warning is logged.
-- The quote attribute service narrows the cart repository's `CartInterface` to `Quote` before using its data
-  accessors (fix made after the 1.1.0 tag).
-
-## 1.1.0 (2026-10-08) as `platform/module-connector`
-
-First release in this repository (package `platform/module-connector`, module `Platform_Connector`):
-
-- `GET /V1/platform/invoices/:invoiceId/pdf` and `GET /V1/platform/version` for the Arasta integration
-  (ACL `Platform_Connector::api`).
-- Signed customer identity (`data-customer-token`) and the guest masked cart ID (`data-cart-id`) on the widget loader
-  tag, from the `platform-identity` customer-data section.
-- `POST /V1/platform/quote/attribute` (anonymous) tags the shopper's active cart with the Arasta conversation ID;
-  `platform_conversation_id` on `quote` and `sales_order`.
-- On `sales_order_place_after`, orders whose cart carried the ID are posted to Arasta with `X-Platform-Signature`.
-- Settings only through `config:set` (`platform_connector/*`), no admin UI.
+- First release: chat on the storefront, signed-in customers recognised in the chat, invoice PDFs and order links.

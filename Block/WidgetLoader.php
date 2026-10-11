@@ -43,6 +43,18 @@ class WidgetLoader extends Template
         return $this->config->arastaStoreId($this->storeId());
     }
 
+    /** Softaware Cookie Consent category the loader waits for ('' = load at once). */
+    public function getConsentCategory(): string
+    {
+        return $this->config->consentCategory($this->storeId());
+    }
+
+    /** Optional stacking order passed to the loader as data-z-index (null = Arasta default). */
+    public function getZIndex(): ?int
+    {
+        return $this->config->zIndex($this->storeId());
+    }
+
     public function getSectionName(): string
     {
         return self::SECTION;

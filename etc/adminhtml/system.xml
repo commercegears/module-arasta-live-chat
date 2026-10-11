@@ -31,6 +31,16 @@
                     <comment>The data-store-id value of your Arasta embed code. Use a different ID per store view if each one is a separate Arasta store.</comment>
                     <validate>validate-no-html-tags</validate>
                 </field>
+                <field id="consent_category" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Cookie Consent Category</label>
+                    <comment>With Softaware Cookie Consent installed, the chat loads only after the visitor accepts this category (for example analytics, functional or marketing; it must match your cookie banner). Leave empty to load the chat at once. Without Softaware Cookie Consent the chat always loads at once.</comment>
+                    <validate>validate-data</validate>
+                </field>
+                <field id="z_index" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Chat Stacking Order (z-index)</label>
+                    <comment>Leave empty to keep the chat above everything. Set a number below your cookie banner's or other dialogs' z-index if they must cover the chat button.</comment>
+                    <validate>validate-digits</validate>
+                </field>
             </group>
             <group id="identity" translate="label comment" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Customer Identity and Order Links</label>
