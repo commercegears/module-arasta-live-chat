@@ -2,6 +2,6 @@
 <!-- Hyvä themes: same block, vanilla JS template (no RequireJS). -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="softaware.arasta.widget" template="Softaware_ArastaLiveChat::hyva/widget-loader.phtml"/>
+        <referenceBlock name="commercegears.arasta.widget" template="CommerceGears_ArastaLiveChat::hyva/widget-loader.phtml"/>
     </body>
 </page>

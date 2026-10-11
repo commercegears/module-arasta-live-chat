@@ -1,8 +1,16 @@
 # Changelog
 
+## 3.0.1 (2026-10-11)
+
+- Fix: adds the 2.2.0-2.3.0 changes (orders by phone, cookie consent, phone fields) missing from 3.0.0
+
+## 3.0.0 (2026-10-11)
+
+- Improvement: renamed to CommerceGears (new Composer package, admin menu and settings paths)
+
 ## 2.3.0 (2026-10-11)
 
-- Improvement: with Softaware Cookie Consent installed, the chat loads only after the visitor accepts its cookie category.
+- Improvement: with CommerceGears Cookie Consent installed, the chat loads only after the visitor accepts its cookie category.
 - New: setting to keep your cookie banner and other dialogs above the chat button.
 - Fix: the Telephone Attribute list shows only fields that can hold a phone number.
 
@@ -24,7 +32,7 @@
 
 ## 2.0.0 (2026-10-08)
 
-- Improvement: renamed to Arasta Live Chat by Softaware, with its own admin settings (upgrade steps in the README).
+- Improvement: renamed to Arasta Live Chat by CommerceGears, with its own admin settings (upgrade steps in the README).
 - New: Hyvä themes and PHP 8.5 are supported.
 - Fix: orders placed after a chat are linked to the conversation again on Magento 2.4.
 - Improvement: signed-in customers stay recognised in the chat without reloading the page.

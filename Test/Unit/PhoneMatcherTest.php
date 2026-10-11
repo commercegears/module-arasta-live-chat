@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Test\Unit;
+namespace CommerceGears\ArastaLiveChat\Test\Unit;
 
 use PHPUnit\Framework\TestCase;
-use Softaware\ArastaLiveChat\Model\PhoneMatcher;
+use CommerceGears\ArastaLiveChat\Model\PhoneMatcher;
 
 class PhoneMatcherTest extends TestCase
 {

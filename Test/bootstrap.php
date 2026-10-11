@@ -1,8 +1,8 @@
 <?php
 /**
- * Softaware Arasta Live Chat: unit test bootstrap.
+ * CommerceGears Arasta Live Chat: unit test bootstrap.
  *
- * Runs against a Magento installation (MAGENTO_ROOT, default: four levels up from app/code/Softaware/<Module>)
+ * Runs against a Magento installation (MAGENTO_ROOT, default: four levels up from app/code/CommerceGears/<Module>)
  * or against this package's own vendor/ directory. Generated factories are declared here when the Magento code
  * generator is not available.
  */
@@ -15,7 +15,7 @@ if (is_file($root . '/app/autoload.php')) {
     require __DIR__ . '/../vendor/autoload.php';
 }
 spl_autoload_register(static function (string $class): void {
-    $prefix = 'Softaware\\ArastaLiveChat\\';
+    $prefix = 'CommerceGears\\ArastaLiveChat\\';
     if (str_starts_with($class, $prefix)) {
         $file = dirname(__DIR__) . '/' . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
         if (is_file($file)) {
@@ -32,8 +32,8 @@ if (!function_exists('__')) {
 }
 
 foreach ([
-    'Softaware\ArastaLiveChat\Model\Data\PdfFileFactory',
-    'Softaware\ArastaLiveChat\Model\Data\VersionInfoFactory',
+    'CommerceGears\ArastaLiveChat\Model\Data\PdfFileFactory',
+    'CommerceGears\ArastaLiveChat\Model\Data\VersionInfoFactory',
     'Magento\Quote\Model\QuoteIdMaskFactory',
 ] as $factory) {
     if (!class_exists($factory)) {

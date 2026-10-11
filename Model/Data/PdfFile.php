@@ -1,14 +1,14 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model\Data;
+namespace CommerceGears\ArastaLiveChat\Model\Data;
 
-use Softaware\ArastaLiveChat\Api\Data\PdfFileInterface;
+use CommerceGears\ArastaLiveChat\Api\Data\PdfFileInterface;
 
 class PdfFile implements PdfFileInterface
 {

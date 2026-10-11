@@ -1,11 +1,11 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
 use Magento\Framework\Component\ComponentRegistrar;
 
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Softaware_ArastaLiveChat', __DIR__);
+ComponentRegistrar::register(ComponentRegistrar::MODULE, 'CommerceGears_ArastaLiveChat', __DIR__);

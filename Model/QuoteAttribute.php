@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model;
+namespace CommerceGears\ArastaLiveChat\Model;
 
 use Magento\Authorization\Model\UserContextInterface;
 use Magento\Framework\Exception\InputException;
@@ -16,7 +16,7 @@ use Magento\Quote\Api\Data\CartInterface;
 use Magento\Quote\Model\MaskedQuoteIdToQuoteIdInterface;
 use Magento\Quote\Model\Quote;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\ArastaLiveChat\Api\QuoteAttributeInterface;
+use CommerceGears\ArastaLiveChat\Api\QuoteAttributeInterface;
 
 /**
  * `POST /V1/platform/quote/attribute`: writes `platform_conversation_id` on the active quote. The quote is resolved server-side: a logged-in

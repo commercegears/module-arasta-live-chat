@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model\Config\Backend;
+namespace CommerceGears\ArastaLiveChat\Model\Config\Backend;
 
 use Magento\Framework\App\Config\Value;
 use Magento\Framework\Exception\ValidatorException;

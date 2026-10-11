@@ -1,12 +1,12 @@
 # Arasta Live Chat for Magento 2: User Guide
 
-Connects your store to Arasta, SoftAware's live chat and support platform:
+Connects your store to Arasta, CommerceGears's live chat and support platform:
 the chat widget on every storefront page, signed-in customers recognised in the chat, invoice PDFs for your agents,
 and orders linked to the conversation that led to them.
 
-- Demo (Luma): https://demo.softawarecommerce.com/
-- Demo (Hyvä): https://demo.softawarecommerce.com/hyva/
-- Admin demo: https://demo.softawarecommerce.com/try-admin/arasta-live-chat
+- Demo (Luma): https://demo.commercegears.com/
+- Demo (Hyvä): https://demo.commercegears.com/hyva/
+- Admin demo: https://demo.commercegears.com/try-admin/arasta-live-chat
 - Changelog: [CHANGELOG.md](../CHANGELOG.md) · Questions: [FAQ](faq.md)
 
 ## 1. Requirements
@@ -16,14 +16,14 @@ and orders linked to the conversation that led to them.
 | Magento | Open Source or Adobe Commerce 2.4.7 to 2.4.9 |
 | PHP | 8.2 to 8.5 |
 | Themes | Luma, Blank and themes based on them; Hyvä 1.3+ |
-| Other | An Arasta account; `softaware/module-core` (installed automatically) |
+| Other | An Arasta account; `commercegears/module-core` (installed automatically) |
 
 ## 2. Installation
 
 ```bash
-composer config repositories.softaware composer https://repo.softawarecommerce.com
-composer config --auth http-basic.repo.softawarecommerce.com PUBLIC_KEY PRIVATE_KEY
-composer require softaware/module-arasta-live-chat
+composer config repositories.commercegears composer https://repo.commercegears.com
+composer config --auth http-basic.repo.commercegears.com PUBLIC_KEY PRIVATE_KEY
+composer require commercegears/module-arasta-live-chat
 bin/magento setup:upgrade
 bin/magento setup:di:compile            # production mode only
 bin/magento setup:static-content:deploy # production mode only
@@ -36,7 +36,7 @@ If you used the previous package `platform/module-connector`, remove it first (`
 platform/module-connector`). Your settings and the integration's API permission are carried over by
 `setup:upgrade`; see the README section "Upgrading from platform/module-connector 1.x".
 
-To update later: `composer update softaware/module-arasta-live-chat`, then the same `bin/magento` commands.
+To update later: `composer update commercegears/module-arasta-live-chat`, then the same `bin/magento` commands.
 
 ## 3. Quick start
 
@@ -46,7 +46,7 @@ To update later: `composer update softaware/module-arasta-live-chat`, then the s
    <script src="https://app.arasta.io/widget/v1/assets/loader.js" data-store-id="YOUR-STORE-ID" async></script>
    ```
 
-2. In Magento go to **Stores > Configuration > Softaware > Arasta Live Chat**.
+2. In Magento go to **Stores > Configuration > CommerceGears > Arasta Live Chat**.
 3. Paste the `data-store-id` value into **Store ID**. Keep the default **Widget Loader URL** unless Arasta gave you a
    different one.
 4. To recognise signed-in customers and link orders, paste the **Signing Secret** from the same Arasta page.
@@ -72,9 +72,9 @@ when each one is a separate store in Arasta.
 - **Widget Loader URL**: the `src` of the embed code. Default `https://app.arasta.io/widget/v1/assets/loader.js`.
   Must start with `https://`. Order links are sent to the same host.
 - **Store ID**: the `data-store-id` of the embed code. The widget is only added when this is filled in.
-- **Cookie Consent Category**: with Softaware Cookie Consent installed, the chat loads only after the visitor accepts
+- **Cookie Consent Category**: with CommerceGears Cookie Consent installed, the chat loads only after the visitor accepts
   this category (default `analytics`; use the category your cookie banner lists the chat under). Empty loads the chat
-  at once. Without Softaware Cookie Consent the chat always loads at once.
+  at once. Without CommerceGears Cookie Consent the chat always loads at once.
 - **Chat Stacking Order (z-index)**: empty keeps the chat above everything. Enter a number below the z-index of your
   cookie banner or other dialogs if they must cover the chat button.
 
@@ -86,7 +86,7 @@ when each one is a separate store in Arasta.
   the current one expires.
 
 You can also set any of these with `bin/magento config:set` (add `--lock-env` to keep a value in `app/etc/env.php`),
-for example `bin/magento config:set --lock-env softaware_arasta_live_chat/identity/signing_secret '<secret>'`.
+for example `bin/magento config:set --lock-env commercegears_arasta_live_chat/identity/signing_secret '<secret>'`.
 
 ## 5. What happens on the storefront
 
@@ -119,7 +119,7 @@ Arasta reads invoice PDFs and checks which features your store supports through 
 
 1. **System > Extensions > Integrations > Add New Integration** (or edit the one you already use for Arasta).
 2. On the **API** tab choose **Custom** and tick the resources Arasta asks for plus
-   **Softaware > Arasta Live Chat > Arasta Live Chat API**.
+   **CommerceGears > Arasta Live Chat > Arasta Live Chat API**.
 3. Save, **Activate** (or **Reauthorize**) and enter the tokens in Arasta.
 
 ![API permission in the integration](images/admin-integration.png)
@@ -144,8 +144,8 @@ allows that host on the storefront automatically.
 
 Under **System > Permissions > User Roles > Role Resources**:
 
-- **Softaware > Arasta Live Chat > Arasta Live Chat Settings**: the configuration section.
-- **Softaware > Arasta Live Chat > Arasta Live Chat API**: the REST endpoints (meant for the Arasta integration).
+- **CommerceGears > Arasta Live Chat > Arasta Live Chat Settings**: the configuration section.
+- **CommerceGears > Arasta Live Chat > Arasta Live Chat API**: the REST endpoints (meant for the Arasta integration).
 
 ## 9. Privacy
 

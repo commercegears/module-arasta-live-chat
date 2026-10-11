@@ -4,7 +4,7 @@
     <type name="Magento\Customer\CustomerData\SectionPoolInterface">
         <arguments>
             <argument name="sectionSourceMap" xsi:type="array">
-                <item name="platform-identity" xsi:type="string">Softaware\ArastaLiveChat\CustomerData\IdentityToken</item>
+                <item name="platform-identity" xsi:type="string">CommerceGears\ArastaLiveChat\CustomerData\IdentityToken</item>
             </argument>
         </arguments>
     </type>

@@ -1,16 +1,16 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Test\Unit;
+namespace CommerceGears\ArastaLiveChat\Test\Unit;
 
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\Sales\Api\InvoiceRepositoryInterface;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Pdf\Invoice as InvoicePdfRenderer;
 use PHPUnit\Framework\TestCase;
-use Softaware\ArastaLiveChat\Model\Data\PdfFile;
-use Softaware\ArastaLiveChat\Model\Data\PdfFileFactory;
-use Softaware\ArastaLiveChat\Model\InvoicePdf;
+use CommerceGears\ArastaLiveChat\Model\Data\PdfFile;
+use CommerceGears\ArastaLiveChat\Model\Data\PdfFileFactory;
+use CommerceGears\ArastaLiveChat\Model\InvoicePdf;
 
 class InvoicePdfTest extends TestCase
 {

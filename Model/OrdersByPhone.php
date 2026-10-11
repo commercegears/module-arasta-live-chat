@@ -1,16 +1,16 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model;
+namespace CommerceGears\ArastaLiveChat\Model;
 
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Exception\InputException;
-use Softaware\ArastaLiveChat\Api\OrdersByPhoneInterface;
+use CommerceGears\ArastaLiveChat\Api\OrdersByPhoneInterface;
 
 /**
  * `GET /V1/platform/orders/by-phone`: lets Arasta list the orders of a customer it knows only by a verified phone number

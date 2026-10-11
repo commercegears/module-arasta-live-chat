@@ -1,19 +1,19 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model;
+namespace CommerceGears\ArastaLiveChat\Model;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\Encryption\EncryptorInterface;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Typed access to Stores > Configuration > Softaware > Arasta Live Chat (store view scope).
+ * Typed access to Stores > Configuration > CommerceGears > Arasta Live Chat (store view scope).
  *
  * The 1.x package (platform/module-connector) read the same settings from `platform_connector/*`. A data patch copies
  * database values to the new paths; values that only exist in app/etc/env.php or config.php under the old paths
@@ -21,7 +21,7 @@ use Magento\Store\Model\ScopeInterface;
  */
 class Config
 {
-    public const SECTION = 'softaware_arasta_live_chat';
+    public const SECTION = 'commercegears_arasta_live_chat';
     public const LEGACY_SECTION = 'platform_connector';
 
     public const XML_ENABLED = 'general/enabled';
@@ -102,7 +102,7 @@ class Config
     }
 
     /**
-     * Softaware Cookie Consent category the chat waits for; '' loads it at once. Only a plain code is accepted
+     * CommerceGears Cookie Consent category the chat waits for; '' loads it at once. Only a plain code is accepted
      * (letters, digits, underscore), because it is passed to the consent API in the browser.
      */
     public function consentCategory(?int $storeId = null): string

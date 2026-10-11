@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="Softaware\ArastaLiveChat\Api\InvoicePdfInterface" type="Softaware\ArastaLiveChat\Model\InvoicePdf"/>
-    <preference for="Softaware\ArastaLiveChat\Api\VersionInterface" type="Softaware\ArastaLiveChat\Model\Version"/>
-    <preference for="Softaware\ArastaLiveChat\Api\Data\PdfFileInterface" type="Softaware\ArastaLiveChat\Model\Data\PdfFile"/>
-    <preference for="Softaware\ArastaLiveChat\Api\Data\VersionInfoInterface" type="Softaware\ArastaLiveChat\Model\Data\VersionInfo"/>
-    <preference for="Softaware\ArastaLiveChat\Api\QuoteAttributeInterface" type="Softaware\ArastaLiveChat\Model\QuoteAttribute"/>
-    <preference for="Softaware\ArastaLiveChat\Api\OrdersByPhoneInterface" type="Softaware\ArastaLiveChat\Model\OrdersByPhone"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\InvoicePdfInterface" type="CommerceGears\ArastaLiveChat\Model\InvoicePdf"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\VersionInterface" type="CommerceGears\ArastaLiveChat\Model\Version"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\Data\PdfFileInterface" type="CommerceGears\ArastaLiveChat\Model\Data\PdfFile"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\Data\VersionInfoInterface" type="CommerceGears\ArastaLiveChat\Model\Data\VersionInfo"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\QuoteAttributeInterface" type="CommerceGears\ArastaLiveChat\Model\QuoteAttribute"/>
+    <preference for="CommerceGears\ArastaLiveChat\Api\OrdersByPhoneInterface" type="CommerceGears\ArastaLiveChat\Model\OrdersByPhone"/>
     <!-- Keep the signing secret out of app/etc/config.php when the configuration is dumped. -->
     <type name="Magento\Config\Model\Config\TypePool">
         <arguments>
             <argument name="sensitive" xsi:type="array">
-                <item name="softaware_arasta_live_chat/identity/signing_secret" xsi:type="string">1</item>
+                <item name="commercegears_arasta_live_chat/identity/signing_secret" xsi:type="string">1</item>
                 <item name="platform_connector/identity/signing_secret" xsi:type="string">1</item>
             </argument>
         </arguments>
@@ -20,7 +20,7 @@
     <type name="Magento\Csp\Model\CompositePolicyCollector">
         <arguments>
             <argument name="collectors" xsi:type="array">
-                <item name="softaware_arasta_live_chat" xsi:type="object" sortOrder="4">Softaware\ArastaLiveChat\Model\Csp\LoaderPolicyCollector\Proxy</item>
+                <item name="commercegears_arasta_live_chat" xsi:type="object" sortOrder="4">CommerceGears\ArastaLiveChat\Model\Csp\LoaderPolicyCollector\Proxy</item>
             </argument>
         </arguments>
     </type>

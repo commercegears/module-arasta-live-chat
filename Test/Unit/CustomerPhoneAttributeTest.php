@@ -1,12 +1,12 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Test\Unit;
+namespace CommerceGears\ArastaLiveChat\Test\Unit;
 
 use Magento\Customer\Api\CustomerMetadataInterface;
 use Magento\Customer\Api\Data\AttributeMetadataInterface;
 use PHPUnit\Framework\TestCase;
-use Softaware\ArastaLiveChat\Model\Config\Source\CustomerPhoneAttribute;
+use CommerceGears\ArastaLiveChat\Model\Config\Source\CustomerPhoneAttribute;
 
 class CustomerPhoneAttributeTest extends TestCase
 {

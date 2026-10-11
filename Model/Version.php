@@ -1,18 +1,18 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model;
+namespace CommerceGears\ArastaLiveChat\Model;
 
 use Composer\InstalledVersions;
 use Magento\Framework\App\ProductMetadataInterface;
-use Softaware\ArastaLiveChat\Api\Data\VersionInfoInterface;
-use Softaware\ArastaLiveChat\Api\VersionInterface;
-use Softaware\ArastaLiveChat\Model\Data\VersionInfoFactory;
+use CommerceGears\ArastaLiveChat\Api\Data\VersionInfoInterface;
+use CommerceGears\ArastaLiveChat\Api\VersionInterface;
+use CommerceGears\ArastaLiveChat\Model\Data\VersionInfoFactory;
 
 /**
  * `GET /V1/platform/version`: module version, Magento version and the capabilities this module adds, used by Arasta
@@ -20,7 +20,7 @@ use Softaware\ArastaLiveChat\Model\Data\VersionInfoFactory;
  */
 class Version implements VersionInterface
 {
-    public const PACKAGE = 'softaware/module-arasta-live-chat';
+    public const PACKAGE = 'commercegears/module-arasta-live-chat';
     /** Fallback when the package was not installed with Composer (app/code). */
     public const MODULE_VERSION = '2.3.0';
     /** quote_attribute = conversation tagging endpoint, order_link = signed order post, orders_by_phone = 2.2.0. */

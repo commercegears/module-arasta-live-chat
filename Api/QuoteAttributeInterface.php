@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Api;
+namespace CommerceGears\ArastaLiveChat\Api;
 
 /**
  * tags the shopper's active quote with the platform conversation id, so the order placed from it

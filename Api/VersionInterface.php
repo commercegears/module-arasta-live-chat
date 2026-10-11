@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Api;
+namespace CommerceGears\ArastaLiveChat\Api;
 
 /**
  * capability discovery.
@@ -14,7 +14,7 @@ namespace Softaware\ArastaLiveChat\Api;
 interface VersionInterface
 {
     /**
-     * @return \Softaware\ArastaLiveChat\Api\Data\VersionInfoInterface
+     * @return \CommerceGears\ArastaLiveChat\Api\Data\VersionInfoInterface
      */
     public function get(): Data\VersionInfoInterface;
 }

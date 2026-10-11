@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model\Config\Source;
+namespace CommerceGears\ArastaLiveChat\Model\Config\Source;
 
 use Magento\Customer\Api\CustomerMetadataInterface;
 use Magento\Framework\Data\OptionSourceInterface;

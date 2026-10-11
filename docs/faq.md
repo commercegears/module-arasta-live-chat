@@ -9,7 +9,7 @@ conversation.
 The module is free. You need an Arasta account for the chat itself.
 
 **Do I still need to paste the Arasta embed code into my theme?**
-No. Enter the Store ID from the embed code in Stores > Configuration > Softaware > Arasta Live Chat and remove any
+No. Enter the Store ID from the embed code in Stores > Configuration > CommerceGears > Arasta Live Chat and remove any
 embed code you added by hand, otherwise the widget loads twice.
 
 **Does it work with Hyvä?**
@@ -35,7 +35,7 @@ The widget works and customers chat as guests. Orders are not linked to conversa
 Yes. All settings can be set per website and store view.
 
 **Which permission does the Arasta integration need?**
-Softaware > Arasta Live Chat > Arasta Live Chat API (`Softaware_ArastaLiveChat::api`), next to the resources Arasta
+CommerceGears > Arasta Live Chat > Arasta Live Chat API (`CommerceGears_ArastaLiveChat::api`), next to the resources Arasta
 asks for. Reauthorise the integration after changing its permissions.
 
 **Can a checkout fail because Arasta is unavailable?**

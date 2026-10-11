@@ -1,13 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Test\Unit;
+namespace CommerceGears\ArastaLiveChat\Test\Unit;
 
 use Magento\Framework\App\ProductMetadataInterface;
 use PHPUnit\Framework\TestCase;
-use Softaware\ArastaLiveChat\Model\Data\VersionInfo;
-use Softaware\ArastaLiveChat\Model\Data\VersionInfoFactory;
-use Softaware\ArastaLiveChat\Model\Version;
+use CommerceGears\ArastaLiveChat\Model\Data\VersionInfo;
+use CommerceGears\ArastaLiveChat\Model\Data\VersionInfoFactory;
+use CommerceGears\ArastaLiveChat\Model\Version;
 
 class VersionTest extends TestCase
 {

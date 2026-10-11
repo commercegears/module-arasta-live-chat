@@ -1,16 +1,16 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Block;
+namespace CommerceGears\ArastaLiveChat\Block;
 
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
-use Softaware\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\Config;
 
 /**
  * Renders the Arasta widget loader (cacheable, no customer data). The identity token and the guest cart id are added
@@ -43,7 +43,7 @@ class WidgetLoader extends Template
         return $this->config->arastaStoreId($this->storeId());
     }
 
-    /** Softaware Cookie Consent category the loader waits for ('' = load at once). */
+    /** CommerceGears Cookie Consent category the loader waits for ('' = load at once). */
     public function getConsentCategory(): string
     {
         return $this->config->consentCategory($this->storeId());

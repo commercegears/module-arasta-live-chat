@@ -1,12 +1,12 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\CustomerData;
+namespace CommerceGears\ArastaLiveChat\CustomerData;
 
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Customer\CustomerData\SectionSourceInterface;
@@ -15,8 +15,8 @@ use Magento\Quote\Model\QuoteIdMaskFactory;
 use Magento\Quote\Model\QuoteIdToMaskedQuoteIdInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use Psr\Log\LoggerInterface;
-use Softaware\ArastaLiveChat\Model\Config;
-use Softaware\ArastaLiveChat\Model\IdentityTokenIssuer;
+use CommerceGears\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\IdentityTokenIssuer;
 
 /**
  * Private-content section `platform-identity`: the signed identity token of the logged-in customer. Served through

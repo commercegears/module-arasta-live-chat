@@ -1,20 +1,20 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Observer;
+namespace CommerceGears\ArastaLiveChat\Observer;
 
 use Magento\Framework\Event\Observer;
 use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\HTTP\Client\Curl;
 use Magento\Sales\Model\Order;
-use Softaware\ArastaLiveChat\Model\Config;
-use Softaware\ArastaLiveChat\Model\OrderLinkPayload;
-use Softaware\ArastaLiveChat\Model\QuoteAttribute;
+use CommerceGears\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\OrderLinkPayload;
+use CommerceGears\ArastaLiveChat\Model\QuoteAttribute;
 use Psr\Log\LoggerInterface;
 
 /**

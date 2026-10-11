@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
-<!-- Invoice PDF, version and orders by phone: integration-token protected via the Softaware_ArastaLiveChat::api ACL resource.
+<!-- Invoice PDF, version and orders by phone: integration-token protected via the CommerceGears_ArastaLiveChat::api ACL resource.
      The quote attribute endpoint is called by the shopper's browser (customer session or guest masked
      quote id), so it is anonymous; the service resolves and checks the quote server-side. -->
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <route url="/V1/platform/invoices/:invoiceId/pdf" method="GET">
-        <service class="Softaware\ArastaLiveChat\Api\InvoicePdfInterface" method="get"/>
+        <service class="CommerceGears\ArastaLiveChat\Api\InvoicePdfInterface" method="get"/>
         <resources>
-            <resource ref="Softaware_ArastaLiveChat::api"/>
+            <resource ref="CommerceGears_ArastaLiveChat::api"/>
         </resources>
     </route>
     <route url="/V1/platform/version" method="GET">
-        <service class="Softaware\ArastaLiveChat\Api\VersionInterface" method="get"/>
+        <service class="CommerceGears\ArastaLiveChat\Api\VersionInterface" method="get"/>
         <resources>
-            <resource ref="Softaware_ArastaLiveChat::api"/>
+            <resource ref="CommerceGears_ArastaLiveChat::api"/>
         </resources>
     </route>
     <route url="/V1/platform/orders/by-phone" method="GET">
-        <service class="Softaware\ArastaLiveChat\Api\OrdersByPhoneInterface" method="find"/>
+        <service class="CommerceGears\ArastaLiveChat\Api\OrdersByPhoneInterface" method="find"/>
         <resources>
-            <resource ref="Softaware_ArastaLiveChat::api"/>
+            <resource ref="CommerceGears_ArastaLiveChat::api"/>
         </resources>
     </route>
     <route url="/V1/platform/quote/attribute" method="POST">
-        <service class="Softaware\ArastaLiveChat\Api\QuoteAttributeInterface" method="set"/>
+        <service class="CommerceGears\ArastaLiveChat\Api\QuoteAttributeInterface" method="set"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

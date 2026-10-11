@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Test\Unit;
+namespace CommerceGears\ArastaLiveChat\Test\Unit;
 
 use Magento\Authorization\Model\UserContextInterface;
 use Magento\Framework\Exception\InputException;
@@ -13,8 +13,8 @@ use Magento\Store\Api\Data\StoreInterface;
 use Magento\Store\Model\StoreManagerInterface;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Softaware\ArastaLiveChat\Model\Config;
-use Softaware\ArastaLiveChat\Model\QuoteAttribute;
+use CommerceGears\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\QuoteAttribute;
 
 class QuoteAttributeTest extends TestCase
 {

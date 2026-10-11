@@ -1,12 +1,12 @@
 /**
- * Softaware Arasta Live Chat (Luma): loads the Arasta widget and keeps its identity attributes up to date.
+ * CommerceGears Arasta Live Chat (Luma): loads the Arasta widget and keeps its identity attributes up to date.
  *
  * The loader tag is <script id="platform-widget-loader" data-store-id="…">. The signed token of the logged-in
  * customer (data-customer-token) and the guest's masked cart id (data-cart-id) come from the private
  * `platform-identity` customer-data section, so full-page-cached HTML never contains them. Every change is announced
  * with the `platform:identity` window event. An expired token is replaced with a fresh one.
  *
- * With Softaware Cookie Consent on the page (window.SwConsent) and a consent category set, the loader is added only
+ * With CommerceGears Cookie Consent on the page (window.SwConsent) and a consent category set, the loader is added only
  * once the visitor grants that category; without it the loader is added at once.
  */
 define(['Magento_Customer/js/customer-data'], function (customerData) {

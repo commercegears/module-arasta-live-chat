@@ -1,20 +1,20 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Model\Csp;
+namespace CommerceGears\ArastaLiveChat\Model\Csp;
 
 use Magento\Framework\App\Area;
 use Magento\Framework\App\State;
 use Magento\Csp\Api\PolicyCollectorInterface;
 use Magento\Csp\Model\Policy\FetchPolicy;
 use Magento\Store\Model\StoreManagerInterface;
-use Softaware\ArastaLiveChat\Model\Config;
-use Softaware\ArastaLiveChat\Model\OrderLinkPayload;
+use CommerceGears\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\OrderLinkPayload;
 
 /**
  * Content Security Policy (storefront): allows the configured Arasta widget host, which is set per store view and so

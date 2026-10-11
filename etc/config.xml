@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <softaware_arasta_live_chat>
+        <commercegears_arasta_live_chat>
             <general>
                 <enabled>1</enabled>
             </general>
@@ -15,6 +15,6 @@
                 <ttl_seconds>3600</ttl_seconds>
                 <phone_attribute/>
             </identity>
-        </softaware_arasta_live_chat>
+        </commercegears_arasta_live_chat>
     </default>
 </config>

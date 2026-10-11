@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <section id="softaware_arasta_live_chat" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="commercegears_arasta_live_chat" translate="label" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Arasta Live Chat</label>
-            <tab>softaware</tab>
-            <resource>Softaware_ArastaLiveChat::config</resource>
+            <tab>commercegears</tab>
+            <resource>CommerceGears_ArastaLiveChat::config</resource>
             <group id="general" translate="label comment" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <attribute type="expanded">1</attribute>
-                <comment><![CDATA[Connects this store to your <a href="https://arasta.softawarecommerce.com/" target="_blank" rel="noopener">Arasta</a> account. The chat widget appears once the Store ID is filled in.]]></comment>
+                <comment><![CDATA[Connects this store to your <a href="https://app.arasta.io/" target="_blank" rel="noopener">Arasta</a> account. The chat widget appears once the Store ID is filled in.]]></comment>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Enabled</label>
                     <comment>When set to No, the widget is not loaded, no identity tokens are issued and orders are not linked to conversations.</comment>
@@ -23,7 +23,7 @@
                 <field id="loader_url" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Widget Loader URL</label>
                     <comment>The src of the script in your Arasta embed code. Leave the default unless Arasta gives you a different address. Order links are sent to the same host.</comment>
-                    <backend_model>Softaware\ArastaLiveChat\Model\Config\Backend\LoaderUrl</backend_model>
+                    <backend_model>CommerceGears\ArastaLiveChat\Model\Config\Backend\LoaderUrl</backend_model>
                     <validate>validate-url</validate>
                 </field>
                 <field id="store_id" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -33,7 +33,7 @@
                 </field>
                 <field id="consent_category" translate="label comment" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Cookie Consent Category</label>
-                    <comment>With Softaware Cookie Consent installed, the chat loads only after the visitor accepts this category (for example analytics, functional or marketing; it must match your cookie banner). Leave empty to load the chat at once. Without Softaware Cookie Consent the chat always loads at once.</comment>
+                    <comment>With CommerceGears Cookie Consent installed, the chat loads only after the visitor accepts this category (for example analytics, functional or marketing; it must match your cookie banner). Leave empty to load the chat at once. Without CommerceGears Cookie Consent the chat always loads at once.</comment>
                     <validate>validate-data</validate>
                 </field>
                 <field id="z_index" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
@@ -49,7 +49,7 @@
                 <field id="signing_secret" translate="label comment" type="obscure" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Signing Secret</label>
                     <comment>From the Arasta dashboard (Stores &gt; your store &gt; Widget). At least 32 characters. Stored encrypted.</comment>
-                    <backend_model>Softaware\ArastaLiveChat\Model\Config\Backend\SigningSecret</backend_model>
+                    <backend_model>CommerceGears\ArastaLiveChat\Model\Config\Backend\SigningSecret</backend_model>
                 </field>
                 <field id="ttl_seconds" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Identity Token Lifetime (seconds)</label>
@@ -59,7 +59,7 @@
                 <field id="phone_attribute" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Telephone Attribute</label>
                     <comment>Matches a signed-in customer with the same person on other channels (for example WhatsApp). Select an attribute only if your website verifies the phone number (for example with an SMS code). Numbers must be stored in international format with the country code (for example +44 7700 900123 or 0044 7700 900123); a local number such as 07700 900123 is ignored for matching, because the country is not known.</comment>
-                    <source_model>Softaware\ArastaLiveChat\Model\Config\Source\CustomerPhoneAttribute</source_model>
+                    <source_model>CommerceGears\ArastaLiveChat\Model\Config\Source\CustomerPhoneAttribute</source_model>
                 </field>
             </group>
         </section>

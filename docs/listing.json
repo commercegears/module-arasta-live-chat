@@ -116,19 +116,19 @@
         "storefront": [
             {
                 "label": "Luma storefront",
-                "url": "https://demo.softawarecommerce.com/",
+                "url": "https://demo.commercegears.com/",
                 "image": "docs/images/storefront-luma.png"
             },
             {
                 "label": "Hyvä storefront",
-                "url": "https://demo.softawarecommerce.com/hyva/",
+                "url": "https://demo.commercegears.com/hyva/",
                 "image": "docs/images/storefront-hyva.png"
             }
         ],
         "admin": [
             {
                 "label": "Admin panel",
-                "url": "https://demo.softawarecommerce.com/try-admin/arasta-live-chat",
+                "url": "https://demo.commercegears.com/try-admin/arasta-live-chat",
                 "image": "docs/images/admin-settings.png"
             }
         ]

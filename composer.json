@@ -1,12 +1,12 @@
 {
-    "name": "softaware/module-arasta-live-chat",
+    "name": "commercegears/module-arasta-live-chat",
     "description": "Connects Magento 2 to Arasta live chat and support: widget loader on Luma and Hyvä, signed customer identity, invoice PDF and version REST endpoints, and order-to-conversation linking.",
     "type": "magento2-module",
     "license": "proprietary",
     "require": {
         "php": "~8.2.0||~8.3.0||~8.4.0||~8.5.0",
         "magento/framework": "~103.0.7",
-        "softaware/module-core": "^1.0",
+        "commercegears/module-core": "^2.0",
         "magento/module-authorization": "*",
         "magento/module-backend": "*",
         "magento/module-checkout": "*",
@@ -32,7 +32,10 @@
             "registration.php"
         ],
         "psr-4": {
-            "Softaware\\ArastaLiveChat\\": ""
+            "CommerceGears\\ArastaLiveChat\\": ""
         }
+    },
+    "replace": {
+        "softaware/module-arasta-live-chat": "*"
     }
 }

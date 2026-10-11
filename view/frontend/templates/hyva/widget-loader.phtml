@@ -1,11 +1,11 @@
 <?php
 /**
- * Softaware Arasta Live Chat: widget loader for Hyvä themes (vanilla JS, no RequireJS).
+ * CommerceGears Arasta Live Chat: widget loader for Hyvä themes (vanilla JS, no RequireJS).
  *
  * The identity token and guest cart id come from Hyvä private content (`private-content-loaded`, section
  * `platform-identity`), so full-page-cached HTML never contains them.
  *
- * @var \Softaware\ArastaLiveChat\Block\WidgetLoader $block
+ * @var \CommerceGears\ArastaLiveChat\Block\WidgetLoader $block
  * @var \Magento\Framework\Escaper $escaper
  * @var \Hyva\Theme\ViewModel\HyvaCsp $hyvaCsp
  */
@@ -38,7 +38,7 @@ $config = [
         let timer = null;
         let retried = false;
 
-        // With Softaware Cookie Consent (window.SwConsent) and a category set, the chat waits for that consent.
+        // With CommerceGears Cookie Consent (window.SwConsent) and a category set, the chat waits for that consent.
         const consent = window.SwConsent;
         const gated = Boolean(config.consentCategory && consent && typeof consent.whenGranted === 'function');
         const append = () => {

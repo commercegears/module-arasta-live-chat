@@ -2,8 +2,8 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="before.body.end">
-            <block class="Softaware\ArastaLiveChat\Block\WidgetLoader" name="softaware.arasta.widget"
-                   template="Softaware_ArastaLiveChat::widget-loader.phtml"/>
+            <block class="CommerceGears\ArastaLiveChat\Block\WidgetLoader" name="commercegears.arasta.widget"
+                   template="CommerceGears_ArastaLiveChat::widget-loader.phtml"/>
         </referenceContainer>
     </body>
 </page>

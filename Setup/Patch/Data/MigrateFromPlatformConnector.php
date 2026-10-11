@@ -1,30 +1,30 @@
 <?php
 /**
- * Softaware Arasta Live Chat
+ * CommerceGears Arasta Live Chat
  *
- * @copyright Copyright (c) Softaware Commerce (https://www.softawarecommerce.co.uk/)
+ * @copyright Copyright (c) CommerceGears (https://commercegears.com/)
  */
 declare(strict_types=1);
 
-namespace Softaware\ArastaLiveChat\Setup\Patch\Data;
+namespace CommerceGears\ArastaLiveChat\Setup\Patch\Data;
 
 use Magento\Framework\Encryption\EncryptorInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\Patch\DataPatchInterface;
-use Softaware\ArastaLiveChat\Model\Config;
+use CommerceGears\ArastaLiveChat\Model\Config;
 
 /**
  * Upgrade from platform/module-connector 1.x (Platform_Connector):
- * - copies saved settings from `platform_connector/*` to `softaware_arasta_live_chat/*` (every scope; values already
+ * - copies saved settings from `platform_connector/*` to `commercegears_arasta_live_chat/*` (every scope; values already
  *   saved under the new path win; `widget/store_key` becomes `widget/store_id`; the signing secret is stored encrypted);
- * - grants the new ACL resource Softaware_ArastaLiveChat::api to every role and integration that had
+ * - grants the new ACL resource CommerceGears_ArastaLiveChat::api to every role and integration that had
  *   Platform_Connector::api, so existing Arasta integrations keep working without re-authorising.
  * The old rows are left in place. Does nothing on a fresh install.
  */
 class MigrateFromPlatformConnector implements DataPatchInterface
 {
     public const LEGACY_ACL = 'Platform_Connector::api';
-    public const NEW_ACL = 'Softaware_ArastaLiveChat::api';
+    public const NEW_ACL = 'CommerceGears_ArastaLiveChat::api';
 
     public function __construct(
         private readonly ModuleDataSetupInterface $setup,
