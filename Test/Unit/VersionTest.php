@@ -22,6 +22,6 @@ class VersionTest extends TestCase
         $info = (new Version($metadata, $factory))->get();
         self::assertMatchesRegularExpression('/^\d+\.\d+\.\d+$/', $info->getModuleVersion());
         self::assertSame('2.4.9', $info->getMagentoVersion());
-        self::assertSame(['invoice_pdf', 'signed_identity', 'quote_attribute', 'order_link'], $info->getCapabilities());
+        self::assertSame(['invoice_pdf', 'signed_identity', 'quote_attribute', 'order_link', 'orders_by_phone'], $info->getCapabilities());
     }
 }

@@ -90,7 +90,8 @@ resources Arasta asks for. Save and **Reauthorize**.
 | Method and URL | Access | Request | Response |
 | --- | --- | --- | --- |
 | `GET /V1/platform/invoices/:invoiceId/pdf` | `Softaware_ArastaLiveChat::api` | none | `{"file_name", "content_type": "application/pdf", "content": "<base64>"}`; 404 for an unknown invoice |
-| `GET /V1/platform/version` | `Softaware_ArastaLiveChat::api` | none | `{"module_version", "magento_version", "capabilities": ["invoice_pdf", "signed_identity", "quote_attribute", "order_link"]}` |
+| `GET /V1/platform/version` | `Softaware_ArastaLiveChat::api` | none | `{"module_version", "magento_version", "capabilities": ["invoice_pdf", "signed_identity", "quote_attribute", "order_link", "orders_by_phone"]}` |
+| `GET /V1/platform/orders/by-phone?phone=<number>&limit=5` | `Softaware_ArastaLiveChat::api` | `phone` (at least 9 digits), `limit` (1 to 20, default 5) | `["000000012", "000000007"]`: increment ids of orders whose billing or shipping telephone is the same line, newest first; 400 for a short number |
 | `POST /V1/platform/quote/attribute` | anonymous (shopper's browser) | `{"conversationId": "<UUID>", "cartId": "<masked quote ID, guests only>"}` | `true`; 400 for a non-UUID, 404 without an active cart |
 
 The quote attribute endpoint resolves the cart on the server: a signed-in customer's active cart from the session

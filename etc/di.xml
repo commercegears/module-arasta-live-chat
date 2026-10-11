@@ -5,6 +5,7 @@
     <preference for="Softaware\ArastaLiveChat\Api\Data\PdfFileInterface" type="Softaware\ArastaLiveChat\Model\Data\PdfFile"/>
     <preference for="Softaware\ArastaLiveChat\Api\Data\VersionInfoInterface" type="Softaware\ArastaLiveChat\Model\Data\VersionInfo"/>
     <preference for="Softaware\ArastaLiveChat\Api\QuoteAttributeInterface" type="Softaware\ArastaLiveChat\Model\QuoteAttribute"/>
+    <preference for="Softaware\ArastaLiveChat\Api\OrdersByPhoneInterface" type="Softaware\ArastaLiveChat\Model\OrdersByPhone"/>
     <!-- Keep the signing secret out of app/etc/config.php when the configuration is dumped. -->
     <type name="Magento\Config\Model\Config\TypePool">
         <arguments>

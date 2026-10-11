@@ -17,3 +17,4 @@
 "Telephone Attribute","Telephone Attribute"
 "-- Not used --","-- Not used --"
 "Matches a signed-in customer with the same person on other channels (for example WhatsApp). Select an attribute only if your website verifies the phone number (for example with an SMS code).","Matches a signed-in customer with the same person on other channels (for example WhatsApp). Select an attribute only if your website verifies the phone number (for example with an SMS code)."
+"A phone number needs at least %1 digits.","A phone number needs at least %1 digits."

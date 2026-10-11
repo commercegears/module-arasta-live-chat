@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.2.0 (2026-10-11)
+
+### Added
+
+- **Orders by phone** (`GET /V1/platform/orders/by-phone?phone=…&limit=5`, ACL `Softaware_ArastaLiveChat::api`):
+  the increment ids of the orders whose billing or shipping telephone is the same line as the given number, newest
+  first (at most 20). Arasta uses it to list the orders of a customer who wrote on WhatsApp, whose number WhatsApp has
+  verified. Numbers are compared on digits: a leading 0 or 00 and a country code are ignored, at least nine digits
+  must match. Magento's standard search cannot filter orders by address telephone, hence the endpoint. The version
+  endpoint reports the new capability `orders_by_phone`. No database changes.
+
 ## 2.1.0 (2026-10-10)
 
 ### Added
