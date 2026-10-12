@@ -1,5 +1,8 @@
 # Changelog
 
+## 3.0.2 (2026-10-12)
+- Improvement: user guide screenshots and links updated for the CommerceGears name
+
 ## 3.0.1 (2026-10-11)
 
 - Fix: adds the 2.2.0-2.3.0 changes (orders by phone, cookie consent, phone fields) missing from 3.0.0
