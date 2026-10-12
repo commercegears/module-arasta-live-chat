@@ -39,7 +39,7 @@ Replaces `platform/module-connector` (`Platform_Connector`) 1.x; see [Upgrading 
 
 ## Requirements
 
-Magento Open Source or Adobe Commerce 2.4.7 to 2.4.9, PHP 8.2 to 8.5, `commercegears/module-core` ^1.0 (installed
+Magento Open Source or Adobe Commerce 2.4.6 to 2.4.9, PHP 8.2 to 8.5 (Magento 2.4.6: PHP 8.2), `commercegears/module-core` ^1.0 (installed
 automatically). Themes: Luma, Blank and their children; Hyvä 1.3+ (the Hyvä checkout uses the Luma fallback, where the
 Luma template is used).
 
