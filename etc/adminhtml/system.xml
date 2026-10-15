@@ -41,6 +41,11 @@
                     <comment>Leave empty to keep the chat above everything. Set a number below your cookie banner's or other dialogs' z-index if they must cover the chat button.</comment>
                     <validate>validate-digits</validate>
                 </field>
+                <field id="phone_bottom_offset" translate="label comment" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Space Below the Chat Button on Phones (px)</label>
+                    <comment>Moves the chat button up on screens narrower than 768 px, for example 72 when a sticky Add to Cart bar or cookie button sits at the bottom. 0 keeps the default position.</comment>
+                    <validate>validate-digits validate-digits-range digits-range-0-300</validate>
+                </field>
             </group>
             <group id="identity" translate="label comment" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>Customer Identity and Order Links</label>

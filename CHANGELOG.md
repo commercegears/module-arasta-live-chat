@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.1.0 (2026-10-15)
+- New: setting to move the chat button up on phones, e.g. above a sticky Add to Cart bar.
+- Improvement: the chat button steps aside while a CommerceGears promo popup is open.
+
 ## 3.0.3 (2026-10-12)
 - Improvement: compatible with Magento 2.4.6 (PHP 8.2).
 

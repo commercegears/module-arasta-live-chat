@@ -9,6 +9,7 @@
                 <loader_url>https://app.arasta.io/widget/v1/assets/loader.js</loader_url>
                 <store_id/>
                 <consent_category>analytics</consent_category>
+                <phone_bottom_offset>0</phone_bottom_offset>
             </widget>
             <identity>
                 <signing_secret/>

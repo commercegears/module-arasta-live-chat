@@ -67,6 +67,7 @@ set per website and store view.
 | Store ID | `commercegears_arasta_live_chat/widget/store_id` | empty |
 | Cookie Consent Category (CommerceGears Cookie Consent) | `commercegears_arasta_live_chat/widget/consent_category` | `analytics` |
 | Chat Stacking Order (z-index) | `commercegears_arasta_live_chat/widget/z_index` | empty (on top) |
+| Space Below the Chat Button on Phones (px) | `commercegears_arasta_live_chat/widget/phone_bottom_offset` | 0 (Arasta position) |
 | Signing Secret (encrypted, at least 32 characters) | `commercegears_arasta_live_chat/identity/signing_secret` | empty |
 | Identity Token Lifetime (seconds, 60 to 3600) | `commercegears_arasta_live_chat/identity/ttl_seconds` | 3600 |
 | Telephone Attribute | `commercegears_arasta_live_chat/identity/phone_attribute` | empty |
@@ -146,3 +147,10 @@ cd app/code/CommerceGears/ArastaLiveChat && php phpunit.phar -c phpunit.xml.dist
 ## Licence
 
 Proprietary. © CommerceGears.
+
+## Chat button and other floating elements
+
+- On screens narrower than 768 px the chat button (and its panel) moves up by *Space Below the Chat Button on
+  Phones*, for example 72 when a sticky Add to Cart bar sits at the bottom of the page.
+- While a CommerceGears promo popup (exit intent, Spin & Win, Scratch & Win, personalised offers) is open, the chat
+  button is hidden, so it never covers the popup.

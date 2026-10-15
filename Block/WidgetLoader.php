@@ -55,6 +55,12 @@ class WidgetLoader extends Template
         return $this->config->zIndex($this->storeId());
     }
 
+    /** Extra space (px) below the chat button on phones (0 = Arasta default position). */
+    public function getPhoneBottomOffset(): int
+    {
+        return $this->config->phoneBottomOffset($this->storeId());
+    }
+
     public function getSectionName(): string
     {
         return self::SECTION;

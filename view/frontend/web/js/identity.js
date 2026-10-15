@@ -12,6 +12,43 @@
 define(['Magento_Customer/js/customer-data'], function (customerData) {
     'use strict';
 
+    /**
+     * Moves the Arasta launcher (inside the widget's open shadow root) up on phones by the configured offset.
+     * A stylesheet with !important wins over the launcher's inline position.
+     */
+    function placeLauncher(offset) {
+        var css = '@media (max-width: 767px){button[aria-expanded]{bottom:' + (20 + offset) + 'px !important}'
+            + 'div[part="panel"]{bottom:' + (92 + offset) + 'px !important;'
+            + 'height:min(640px,calc(100vh - ' + (124 + offset) + 'px)) !important}}',
+            observer;
+
+        function scan() {
+            var host = document.querySelector('[data-platform-widget]'),
+                style;
+
+            if (!host || !host.shadowRoot) {
+                return false;
+            }
+            if (!host.shadowRoot.querySelector('style[data-cg-offset]')) {
+                style = document.createElement('style');
+                style.setAttribute('data-cg-offset', '');
+                style.textContent = css;
+                host.shadowRoot.appendChild(style);
+            }
+            return true;
+        }
+
+        if (!offset || scan()) {
+            return;
+        }
+        observer = new MutationObserver(function () {
+            if (scan()) {
+                observer.disconnect();
+            }
+        });
+        observer.observe(document.body, {childList: true});
+    }
+
     var SECTION = 'platform-identity',
         SCRIPT_ID = 'platform-widget-loader',
         MARGIN_MS = 30000;
@@ -69,6 +106,7 @@ define(['Magento_Customer/js/customer-data'], function (customerData) {
         }
 
         function load() {
+            placeLauncher(Number(config.phoneOffset) || 0);
             document.body.appendChild(script);
         }
 

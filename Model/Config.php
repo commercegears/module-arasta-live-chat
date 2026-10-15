@@ -33,6 +33,7 @@ class Config
     public const XML_PHONE_ATTRIBUTE = 'identity/phone_attribute';
     public const XML_CONSENT_CATEGORY = 'widget/consent_category';
     public const XML_Z_INDEX = 'widget/z_index';
+    public const XML_PHONE_OFFSET = 'widget/phone_bottom_offset';
 
     /** New field => the 1.x field under `platform_connector/`. */
     public const LEGACY_FIELDS = [
@@ -116,6 +117,13 @@ class Config
     {
         $value = trim($this->value(self::XML_Z_INDEX, $storeId));
         return preg_match('/^\d{1,10}$/', $value) === 1 && (int) $value > 1 && (int) $value <= 2147483647 ? (int) $value : null;
+    }
+
+    /** Extra space (px) below the chat button on phones, 0-300; 0 keeps the Arasta position. */
+    public function phoneBottomOffset(?int $storeId = null): int
+    {
+        $value = trim($this->value(self::XML_PHONE_OFFSET, $storeId));
+        return preg_match('/^\d{1,3}$/', $value) === 1 ? min((int) $value, 300) : 0;
     }
 
     private function value(string $field, ?int $storeId): string
